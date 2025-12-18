@@ -27,6 +27,11 @@ export default defineConfig({
     target: 'esnext',
   },
   test: {
+    maxWorkers: 2,
+    maxConcurrency: 2,
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setupTests.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html'],
