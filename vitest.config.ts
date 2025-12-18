@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     projects: ['./ui/vite.config.ts'],
     coverage: {
-      provider: 'v8',
+      provider: 'istanbul',
       reporter: ['text', 'html', 'lcov'],
     },
   },

@@ -34,7 +34,7 @@ export default defineConfig({
     setupFiles: ['./src/test/setupTests.ts'],
     coverage: {
       enabled: true,
-      provider: 'v8',
+      provider: 'istanbul',
       reporter: ['text', 'html'],
       reportsDirectory: '../coverage/ui',
       include: ['src/**/*.{ts,tsx}'],

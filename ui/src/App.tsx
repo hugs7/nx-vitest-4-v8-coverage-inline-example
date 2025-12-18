@@ -11,7 +11,7 @@ export const App = () => {
   return (
     <>
       <div></div>
-      <h1>NX Vitest 4 v8 Coverage Inline Example</h1>
+      <h1>NX Vitest 4 Istanbul Coverage Inline Example</h1>
       <div className="card">
         <SomeComponent />
         <SomeInlineComponent />
