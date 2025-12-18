@@ -1,0 +1,30 @@
+{
+  "installation": {
+    "version": "22.3.1"
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "useDaemonProcess": false,
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "outputs": ["{options.outputPath}"]
+    },
+    "test": {
+      "cache": true,
+      "dependsOn": ["^test"]
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "dev"
+      }
+    }
+  ],
+  "tui": {
+    "autoExit": true
+  }
+}

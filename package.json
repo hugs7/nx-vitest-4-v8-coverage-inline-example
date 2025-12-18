@@ -1,0 +1,47 @@
+{
+  "name": "nx-vitest-4-v8-coverage-inline-example-root",
+  "version": "1.0.0",
+  "description": "Example repository to replicate https://github.com/vitest-dev/vitest/issues/9293",
+  "keywords": [
+    "nx",
+    "vitest",
+    "coverage",
+    "v8",
+    "vitest-4"
+  ],
+  "homepage": "https://github.com/hugs7/nx-vitest-4-v8-coverage-inline-example#readme",
+  "bugs": {
+    "url": "https://github.com/hugs7/nx-vitest-4-v8-coverage-inline-example/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugs7/nx-vitest-4-v8-coverage-inline-example.git"
+  },
+  "license": "ISC",
+  "author": "Hugo Burton",
+  "type": "commonjs",
+  "main": "main.ts",
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "test": "nx run-many -target test --exclude root",
+    "build": "nx run-many -target build --exclude root",
+    "dev": "NX_TUI=false nx run-many -target dev --exclude root --output-style=stream-without-prefixes"
+  },
+  "devDependencies": {
+    "@nx/react": "^22.3.1",
+    "@nx/vite": "^22.3.1",
+    "@swc/core": "^1.15.6",
+    "@vitest/coverage-v8": "^4.0.16",
+    "nx": "^22.3.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vite-tsconfig-paths": "^6.0.2",
+    "vitest": "^4.0.16"
+  },
+  "workspaces": [
+    "ui"
+  ]
+}
