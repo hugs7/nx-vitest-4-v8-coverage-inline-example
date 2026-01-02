@@ -9,7 +9,7 @@ In Vitest 3 this is not an issue, and if you define a component using `return` t
 ## Reproducing the bug
 
 ```bash
-npm install
+npm i
 npm test
 
 # Open the test
@@ -19,3 +19,26 @@ open coverage/ui/lcov-report/index.html
 Observe how `SomeComponent` has full coverage while `SomeInlineComponent` has 0%, despite both of them having a test.
 
 If you switch to git branch `feature/istanbul-coverage`, and rerun tests, the problem goes away.
+
+--
+
+## Fix
+
+Thank you to [AriPerkkio](https://github.com/AriPerkkio) for fixing this bug. See Github Issue comment [here](https://github.com/vitest-dev/vitest/issues/9293#issuecomment-3695013103).
+
+Solution is to
+
+```bash
+rm -rf node_modules
+# or for monorepos
+npx npkill -y -D
+
+rm -rf package-lock.json
+npm i
+npm test
+
+# Open the test
+open coverage/ui/lcov-report/index.html
+```
+
+observe coverage for inline functions is now working.
